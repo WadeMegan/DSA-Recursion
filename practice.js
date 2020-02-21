@@ -1,53 +1,29 @@
-let findBuySellStockPrices = function(array){
+// Below partition is Hoare's algorithm.
+let partition = function(arr, low, high) {
+  let pivotValue = arr[low];
+  let i = low;
+  let j = high;
 
-    if (!array||array.length<2){
-        return
+  while (i < j) {
+    while (i <= high && arr[i] <= pivotValue) {
+      i++;
     }
 
-    let currentBuy = array[0]
-    let globalSell = array[1]
-    let globalProfit = globalSell - currentBuy 
-
-    let currentProfit = 0
-
-    for(let i=1;i<array.length;i++){
-        currentProfit = array[i] - currentBuy
-
-        if(currentProfit>globalProfit){
-            globalProfit = currentProfit
-            globalSell = array[i]
-        }
-
-        if(currentBuy>array[i]){
-            currentBuy=array[i]
-        }
+    while (arr[j] > pivotValue) {
+      j--;
     }
-    return [globalSell-globalProfit, globalSell]
-}
 
+    if (i < j) {
+      // swap arr[i], arr[j]
+      let temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    } 
+  }
 
-let findBuySellStockPrices = function(array) {
-    if (!array || array.length < 2) {
-      return;
-    }
-  
-    let currentBuy = array[0];
-    let globalSell = array[1];
-    let globalProfit = globalSell - currentBuy;
-  
-    let currentProfit = 0;
-  
-    for (let i = 1; i < array.length; i++) {
-      currentProfit = array[i] - currentBuy;
-  
-      if (currentProfit > globalProfit) {
-        globalProfit = currentProfit;
-        globalSell = array[i];
-      }
-  
-      if (currentBuy > array[i]) {
-        currentBuy = array[i];
-      } 
-    }
-    return [globalSell - globalProfit, globalSell];
-  };
+  arr[low] = arr[j];
+  arr[j] = pivotValue;
+
+  // return the pivot index
+  return j;
+};

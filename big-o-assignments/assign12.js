@@ -88,7 +88,7 @@ const stringSplitter = function(string,separator){
         results.push(stringCopy)
     }
 
-    return results
+    return results.reverse()
 }
 
 //console.log(stringSplitter("02/15/2020","/"))
@@ -121,6 +121,9 @@ const factorial = function(num){
 
 //FIND A WAY OUT OF THE MAZE
 
+const maze = function(num){
+    if(){} //just there for error
+}
     //not done
 
 //FIND ALL THE WAYS OUT OF THE MAZE

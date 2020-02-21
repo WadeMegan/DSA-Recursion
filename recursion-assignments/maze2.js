@@ -3,8 +3,8 @@ const mazeSolve = function(maze){
 }
 
 let mySmallMaze = [
-    [' hello', ' ', ' '],
-    [' hi', '*', ' '],
+    [' ', ' ', ' '],
+    [' ', '*', ' '],
     [' ', ' ', 'e']
 ];
 
