@@ -1,4 +1,6 @@
-//find the ma sum in the array
+//find the max sum in the array
+
+//sort (without built in methods) and then take the two highest instead of looping twice
 
 const maxSum = function(arr){
 

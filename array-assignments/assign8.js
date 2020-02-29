@@ -1,5 +1,7 @@
 //merge arrays
 
+//instead, use for loop and just check if arr 1 or arr 2 is bigger
+
 const merge = function(arr1,arr2){
 
     let merged=[]

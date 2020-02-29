@@ -18,4 +18,5 @@ function WhatDoesThisProgramDo(lst) {
 
 //if the next node in the list is the same as the previous node, then skip the duplicate node and move onto the next one
 
-//O(n) time
+//logarithmic time because nested for loop. to the power of 2
+//depending on what values of current, may never run
