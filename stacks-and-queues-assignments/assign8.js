@@ -1,7 +1,5 @@
 //implement a queue using two stacks
 
-if(){} //doesn't work
-
 const Stack = require('./assign1')
 
 class _Node {
