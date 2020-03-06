@@ -1,4 +1,5 @@
 // searching in a BST
+const Queue = require('../stacks-and-queues-assignments/assign6')
 
 class BinarySearchTree{
     constructor(key = null, value = null, parent = null) {
@@ -7,6 +8,7 @@ class BinarySearchTree{
         this.parent = parent;
         this.left = null;
         this.right = null;
+        this.bfs = bfs;
     }
 
     dfs(values=[]) {
@@ -43,5 +45,6 @@ class BinarySearchTree{
 
 }
 
+module.exports = BinarySearchTree
 
 
