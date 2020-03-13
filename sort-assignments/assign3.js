@@ -1,33 +1,51 @@
 //implementing quicksort
 
-const swap = function(arr,i,j){
-    //console.log('swap ran')
-    const tmp = arr[i]
-    arr[i]=arr[j]
-    arr[j]=arr[i]
+var items = [3,9,1,20,17,24,22,14];
+function swap(items, leftIndex, rightIndex){
+    var temp = items[leftIndex];
+    items[leftIndex] = items[rightIndex];
+    items[rightIndex] = temp;
 }
-
-function partition(array, start, end) {
-    const pivot = array[end - 1];
-    let j = start;
-    for (let i = start; i < end - 1; i++) {
-        if (array[i] <= pivot) {
-            swap(array, i, j);
-            j++;
+function partition(items, left, right) {
+    var pivot   = items[Math.floor((right + left) / 2)], //middle element
+        i       = left, //left pointer
+        j       = right; //right pointer
+    while (i <= j) {
+        while (items[i] < pivot) {
+            i++;
+        }
+        while (items[j] > pivot) {
+            j--;
+        }
+        if (i <= j) {
+            //console.log(i)
+            swap(items, i, j); //swapping two elements
+            i++;
+            j--;
         }
     }
-    swap(array, end-1, j);
-    return j;
-};
+    return i;
+}
 
-function quickSort(array, start = 0, end = array.length) {
-    if (start >= end) {
-        return array;
+function quickSort(items, left, right) {
+    var index;
+    console.log(items)
+    if (items.length > 1) {
+        index = partition(items, left, right); //index returned from partition
+        console.log(index)
+        //console.log(items)
+        if (left < index - 1) { //more elements on the left side of the pivot
+            console.log('run left')
+            quickSort(items, left, index - 1);
+        }
+        if (index < right) { //more elements on the right side of the pivot
+            console.log('run right')
+            quickSort(items, index, right);
+        }
     }
-    const middle = partition(array, start, end);
-    array = quickSort(array, start, middle);
-    array = quickSort(array, middle + 1, end);
-    return array;
-};
-
-console.log(quickSort([89,30,25,32,72,70,51,42,25]))
+    //console.log(items)
+    return items;
+}
+// first call to quick sort
+var sortedArray = quickSort(items, 0, items.length - 1);
+console.log(sortedArray); //prints [ 25, 25, 30, 32, 42, 51, 70, 72, 89 ]
