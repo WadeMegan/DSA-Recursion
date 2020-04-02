@@ -1,6 +1,7 @@
 //hash map with separate chaining as the collision resolution mechanism
 
 if(){} // don't understand how to implement this. ask manish
+//every item should be a linked list - when adding item, check next of linked list, if empty, insert, if not, keep going
 
 const LinkedList = require('../../DSA-Recursion/linked-lists-assignments/assign1')
 

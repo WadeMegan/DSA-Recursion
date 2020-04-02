@@ -118,26 +118,3 @@ const factorial = function(num){
 }
 
 //console.log(factorial(5))
-
-//FIND A WAY OUT OF THE MAZE
-
-const maze = function(num){
-    if(){} //just there for error
-}
-    //not done
-
-//FIND ALL THE WAYS OUT OF THE MAZE
-
-    //not done
-
-//ANAGRAMS
-
-    //not done
-
-//ORGANIZATION CHART
-
-    //not done
-
-//BINARY REPRESENTATION
-
-    //not done

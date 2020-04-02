@@ -15,7 +15,7 @@ let stack2 = new Stack()
 class Queue {
     //constructor contains 1st and last nodes indicating the beginning and ending of the queue
     constructor(){
-        this.first=null
+        this.first=nul
         this.last=null
     }
 

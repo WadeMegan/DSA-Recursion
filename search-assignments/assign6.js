@@ -35,21 +35,8 @@ const main = function(){
     bst.insert(22,'Crusher')
     bst.insert(6,'Security')
     bst.insert(21,'Selar')
-   
-    //console.log(bst)
 
     return bfs(bst,['Picard','Riker','Data','Worf','LaForge','Crusher','Security','Selar'])
 
 }
 
-
-
-console.log(main())
-
-const officers = function(tree){
-
-
-
-}
-
-//console.log(officers(main()))
